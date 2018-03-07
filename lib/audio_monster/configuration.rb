@@ -110,6 +110,7 @@ module AudioMonster
     def reset!
       self.debug   = ENV['DEBUG']
       self.logger  = Logger.new(STDOUT)
+      self.logger.level = debug ? Logger::DEBUG : Logger::INFO
       self.bin_dir = nil
       self.tmp_dir = '/tmp/audio_monster'
       self.file    = 'file'
